@@ -1,816 +1,474 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
-  <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>ورود | نمونه کار</title>
-
-
-  <style>
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-
-      min-height: 100vh;
-
-      background:
-        linear-gradient(
-          135deg,
-          #f8fafc,
-          #eef2ff
-        );
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      color: #111827;
-    }
-
-
-    .container {
-      width: 100%;
-      max-width: 430px;
-
-      padding: 20px;
-    }
-
-
-    .card {
-      background: white;
-
-      border-radius: 24px;
-
-      padding: 30px;
-
-      box-shadow:
-        0 15px 45px
-        rgba(0,0,0,.08);
-    }
-
-
-    .logo {
-      width: 70px;
-      height: 70px;
-
-      border-radius: 20px;
-
-      background: #111827;
-
-      color: white;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      font-size: 30px;
-
-      margin: 0 auto 18px;
-    }
-
-
-    h1 {
-      text-align: center;
-
-      font-size: 25px;
-
-      margin-bottom: 8px;
-    }
-
-
-    .subtitle {
-      text-align: center;
-
-      color: #6b7280;
-
-      font-size: 14px;
-
-      margin-bottom: 25px;
-    }
-
-
-    .tabs {
-      display: flex;
-
-      background: #f3f4f6;
-
-      padding: 5px;
-
-      border-radius: 13px;
-
-      margin-bottom: 22px;
-    }
-
-
-    .tab {
-      width: 50%;
-
-      border: 0;
-
-      background: transparent;
-
-      padding: 11px;
-
-      border-radius: 10px;
-
-      font-family: inherit;
-
-      cursor: pointer;
-
-      font-weight: bold;
-
-      color: #6b7280;
-    }
-
-
-    .tab.active {
-      background: white;
-
-      color: #111827;
-
-      box-shadow:
-        0 2px 8px
-        rgba(0,0,0,.06);
-    }
-
-
-    label {
-      display: block;
-
-      font-size: 14px;
-
-      font-weight: bold;
-
-      margin-bottom: 7px;
-    }
-
-
-    input {
-      width: 100%;
-
-      padding: 14px;
-
-      border: 1px solid #d1d5db;
-
-      border-radius: 12px;
-
-      outline: none;
-
-      font-family: inherit;
-
-      margin-bottom: 16px;
-    }
-
-
-    input:focus {
-      border-color: #2563eb;
-    }
-
-
-    .main-btn {
-      width: 100%;
-
-      border: 0;
-
-      border-radius: 12px;
-
-      padding: 14px;
-
-      background: #111827;
-
-      color: white;
-
-      font-family: inherit;
-
-      font-weight: bold;
-
-      cursor: pointer;
-    }
-
-
-    .main-btn:hover {
-      background: #2563eb;
-    }
-
-
-    .message {
-      display: none;
-
-      padding: 12px;
-
-      border-radius: 11px;
-
-      margin-bottom: 15px;
-
-      font-size: 13px;
-
-      line-height: 1.7;
-    }
-
-
-    .error {
-      background: #fee2e2;
-
-      color: #991b1b;
-    }
-
-
-    .success {
-      background: #dcfce7;
-
-      color: #166534;
-    }
-
-
-    .shop-link {
-      display: block;
-
-      text-align: center;
-
-      margin-top: 18px;
-
-      color: #2563eb;
-
-      text-decoration: none;
-
-      font-size: 14px;
-    }
-
-
-    .loading {
-      text-align: center;
-
-      color: #6b7280;
-
-      font-size: 13px;
-
-      margin-bottom: 15px;
-    }
-
-
-    .export-box {
-      display: none;
-
-      margin-top: 20px;
-
-      padding-top: 20px;
-
-      border-top: 1px solid #e5e7eb;
-    }
-
-
-    .export-box textarea {
-      width: 100%;
-
-      min-height: 150px;
-
-      direction: ltr;
-
-      text-align: left;
-
-      font-family: monospace;
-
-      padding: 10px;
-
-      border-radius: 10px;
-
-      border: 1px solid #d1d5db;
-    }
-
-
-    .copy-btn {
-      width: 100%;
-
-      margin-top: 8px;
-
-      padding: 11px;
-
-      border: 0;
-
-      border-radius: 10px;
-
-      background: #16a34a;
-
-      color: white;
-
-      font-family: inherit;
-
-      font-weight: bold;
-    }
-
-  </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seviura Shop</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Tahoma,Arial,sans-serif;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at top right,#ffdce8,transparent 45%),
+    linear-gradient(135deg,#fff8fa,#f5e5eb);
+  color:#222;
+}
+
+.container{
+  width:100%;
+  max-width:430px;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.logo h1{
+  font-size:35px;
+}
+
+.logo p{
+  color:#777;
+  margin-top:7px;
+}
+
+.card{
+  background:rgba(255,255,255,.96);
+  border-radius:25px;
+  padding:25px;
+  box-shadow:0 15px 45px rgba(60,20,40,.14);
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  margin-bottom:22px;
+}
+
+.tab{
+  flex:1;
+  border:0;
+  padding:13px;
+  border-radius:13px;
+  background:#f1e8ec;
+  cursor:pointer;
+  font-size:15px;
+}
+
+.tab.active{
+  background:#222;
+  color:white;
+}
+
+.form{
+  display:none;
+}
+
+.form.active{
+  display:block;
+}
+
+h2{
+  margin-bottom:8px;
+}
+
+.subtitle{
+  color:#777;
+  font-size:13px;
+  margin-bottom:20px;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+label{
+  display:block;
+  margin-bottom:7px;
+  font-size:13px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:13px;
+  outline:none;
+  font-size:15px;
+}
+
+input:focus{
+  border-color:#222;
+}
+
+.btn{
+  width:100%;
+  border:0;
+  padding:15px;
+  border-radius:14px;
+  background:#222;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.shop-btn{
+  display:block;
+  text-align:center;
+  text-decoration:none;
+  color:#222;
+  border:1px solid #ddd;
+  padding:14px;
+  border-radius:14px;
+  margin-top:12px;
+}
+
+.message{
+  display:none;
+  padding:12px;
+  border-radius:12px;
+  margin-bottom:15px;
+  font-size:13px;
+}
+
+.message.show{
+  display:block;
+}
+
+.error{
+  background:#ffe5e5;
+  color:#a00000;
+}
+
+.success{
+  background:#e3f8e8;
+  color:#14702b;
+}
+</style>
 </head>
-
 
 <body>
 
-
 <div class="container">
+
+  <div class="logo">
+    <h1>Seviura</h1>
+    <p>فروشگاه آنلاین</p>
+  </div>
 
   <div class="card">
 
-
-    <div class="logo">
-      🛍️
-    </div>
-
-
-    <h1>
-      نمونه کار
-    </h1>
-
-
-    <div class="subtitle">
-      فروشگاه آنلاین
-    </div>
-
-
-    <div
-      class="loading"
-      id="loading"
-    >
-      در حال دریافت اطلاعات...
-    </div>
-
-
     <div class="tabs">
-
-      <button
-        class="tab active"
-        id="loginTab"
-        onclick="showLogin()"
-      >
+      <button class="tab active" onclick="showForm('login')">
         ورود
       </button>
 
-      <button
-        class="tab"
-        id="signupTab"
-        onclick="showSignup()"
-      >
+      <button class="tab" onclick="showForm('signup')">
+        ثبت‌نام
+      </button>
+    </div>
+
+    <div id="message" class="message"></div>
+
+    <!-- LOGIN -->
+    <div id="loginForm" class="form active">
+
+      <h2>خوش برگشتی 👋</h2>
+
+      <p class="subtitle">
+        وارد حساب خودت شو.
+      </p>
+
+      <div class="field">
+        <label>نام کاربری</label>
+        <input
+          id="loginUsername"
+          type="text"
+          autocomplete="username"
+        >
+      </div>
+
+      <div class="field">
+        <label>رمز عبور</label>
+        <input
+          id="loginPassword"
+          type="password"
+          autocomplete="current-password"
+        >
+      </div>
+
+      <button class="btn" onclick="login()">
+        ورود
+      </button>
+
+    </div>
+
+    <!-- SIGNUP -->
+    <div id="signupForm" class="form">
+
+      <h2>ساخت حساب</h2>
+
+      <p class="subtitle">
+        حساب جدید بساز.
+      </p>
+
+      <div class="field">
+        <label>نام</label>
+        <input id="signupName" type="text">
+      </div>
+
+      <div class="field">
+        <label>نام کاربری</label>
+        <input id="signupUsername" type="text">
+      </div>
+
+      <div class="field">
+        <label>رمز عبور</label>
+        <input id="signupPassword" type="password">
+      </div>
+
+      <button class="btn" onclick="signup()">
         ثبت‌نام
       </button>
 
     </div>
 
-
-    <div
-      class="message error"
-      id="errorMessage"
-    ></div>
-
-
-    <div
-      class="message success"
-      id="successMessage"
-    ></div>
-
-
-    <!-- LOGIN -->
-
-    <div id="loginForm">
-
-      <label>
-        نام کاربری
-      </label>
-
-      <input
-        id="loginUsername"
-        type="text"
-        placeholder="نام کاربری"
-      >
-
-
-      <label>
-        رمز عبور
-      </label>
-
-      <input
-        id="loginPassword"
-        type="password"
-        placeholder="رمز عبور"
-      >
-
-
-      <button
-        class="main-btn"
-        onclick="login()"
-      >
-        ورود به فروشگاه
-      </button>
-
-    </div>
-
-
-    <!-- SIGNUP -->
-
-    <div
-      id="signupForm"
-      style="display:none;"
-    >
-
-      <label>
-        نام
-      </label>
-
-      <input
-        id="signupName"
-        type="text"
-        placeholder="نام شما"
-      >
-
-
-      <label>
-        نام کاربری
-      </label>
-
-      <input
-        id="signupUsername"
-        type="text"
-        placeholder="نام کاربری"
-      >
-
-
-      <label>
-        رمز عبور
-      </label>
-
-      <input
-        id="signupPassword"
-        type="password"
-        placeholder="رمز عبور"
-      >
-
-
-      <button
-        class="main-btn"
-        onclick="signup()"
-      >
-        ساخت حساب
-      </button>
-
-
-      <div
-        class="export-box"
-        id="exportBox"
-      >
-
-        <p
-          style="
-            font-size:13px;
-            line-height:1.8;
-            margin-bottom:8px;
-          "
-        >
-          حساب ساخته شد. برای اینکه این کاربر
-          در فایل عمومی سایت هم ثبت شود،
-          JSON زیر را در products.json قرار بده.
-        </p>
-
-        <textarea
-          id="exportJSON"
-          readonly
-        ></textarea>
-
-        <button
-          class="copy-btn"
-          onclick="copyJSON()"
-        >
-          📋 کپی JSON
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <a
-      href="shop.html"
-      class="shop-link"
-    >
-      مشاهده فروشگاه ←
+    <a href="shop.html" class="shop-btn">
+      مشاهده فروشگاه
     </a>
-
 
   </div>
 
 </div>
 
-
-
 <script>
-
 
 let database = {
   users: [],
   products: []
 };
 
+const USER_KEY = "seviura_logged_user";
 
-let dataLoaded = false;
+async function loadDatabase(){
 
+  try{
 
+    const response = await fetch(
+      "products.json?cache=" + Date.now()
+    );
 
-/* ======================================
-   LOAD PRODUCTS.JSON
-====================================== */
-
-async function loadDatabase() {
-
-  try {
-
-    const response =
-      await fetch(
-        "products.json?cache=" +
-        Date.now()
-      );
-
-
-    if (!response.ok) {
+    if(!response.ok){
       throw new Error();
     }
 
+    database = await response.json();
 
-    database =
-      await response.json();
-
-
-    if (!Array.isArray(database.users)) {
+    if(!Array.isArray(database.users)){
       database.users = [];
     }
 
-
-    if (!Array.isArray(database.products)) {
+    if(!Array.isArray(database.products)){
       database.products = [];
     }
 
+  }catch(error){
 
-    dataLoaded = true;
-
-
-    document
-      .getElementById("loading")
-      .textContent =
-      "اطلاعات فروشگاه آماده است.";
-
-
-  } catch (error) {
-
-    document
-      .getElementById("loading")
-      .textContent =
-      "خطا در دریافت products.json";
+    showMessage(
+      "خطا در بارگذاری اطلاعات فروشگاه.",
+      "error"
+    );
 
   }
 
 }
 
+function showForm(type){
+
+  document.querySelectorAll(".tab")
+    .forEach(x => x.classList.remove("active"));
+
+  document.querySelectorAll(".form")
+    .forEach(x => x.classList.remove("active"));
+
+  if(type === "login"){
+
+    document.querySelectorAll(".tab")[0]
+      .classList.add("active");
+
+    document.getElementById("loginForm")
+      .classList.add("active");
+
+  }else{
+
+    document.querySelectorAll(".tab")[1]
+      .classList.add("active");
+
+    document.getElementById("signupForm")
+      .classList.add("active");
+
+  }
+
+  hideMessage();
+}
+
+function showMessage(text,type){
+
+  const box = document.getElementById("message");
+
+  box.textContent = text;
+
+  box.className =
+    "message show " + type;
+}
+
+function hideMessage(){
+
+  document.getElementById("message")
+    .className = "message";
+}
+
+function login(){
+
+  const username =
+    document.getElementById("loginUsername")
+      .value.trim();
+
+  const password =
+    document.getElementById("loginPassword")
+      .value;
+
+  if(!username || !password){
+
+    showMessage(
+      "نام کاربری و رمز عبور را وارد کن.",
+      "error"
+    );
+
+    return;
+  }
+
+  const user = database.users.find(user =>
+    String(user.username).toLowerCase()
+      === username.toLowerCase()
+    &&
+    String(user.password) === password
+  );
+
+  if(!user){
+
+    showMessage(
+      "نام کاربری یا رمز عبور اشتباه است.",
+      "error"
+    );
+
+    return;
+  }
+
+  localStorage.setItem(
+    USER_KEY,
+    JSON.stringify({
+      id:user.id,
+      name:user.name,
+      username:user.username
+    })
+  );
+
+  showMessage(
+    "ورود موفق بود.",
+    "success"
+  );
+
+  setTimeout(() => {
+    location.href = "shop.html";
+  },500);
+}
+
+function signup(){
+
+  const name =
+    document.getElementById("signupName")
+      .value.trim();
+
+  const username =
+    document.getElementById("signupUsername")
+      .value.trim();
+
+  const password =
+    document.getElementById("signupPassword")
+      .value;
+
+  if(!name || !username || !password){
+
+    showMessage(
+      "همه فیلدها را کامل کن.",
+      "error"
+    );
+
+    return;
+  }
+
+  const exists = database.users.some(user =>
+    String(user.username).toLowerCase()
+      === username.toLowerCase()
+  );
+
+  if(exists){
+
+    showMessage(
+      "این نام کاربری قبلاً وجود دارد.",
+      "error"
+    );
+
+    return;
+  }
+
+  const newUser = {
+    id:Date.now(),
+    name:name,
+    username:username,
+    password:password
+  };
+
+  database.users.push(newUser);
+
+  localStorage.setItem(
+    USER_KEY,
+    JSON.stringify({
+      id:newUser.id,
+      name:newUser.name,
+      username:newUser.username
+    })
+  );
+
+  showMessage(
+    "حساب ساخته شد.",
+    "success"
+  );
+
+  setTimeout(() => {
+    location.href = "shop.html";
+  },700);
+}
 
 loadDatabase();
 
+</script>
 
-
-/* ======================================
-   TABS
-====================================== */
-
-function showLogin() {
-
-  document
-    .getElementById("loginForm")
-    .style.display = "block";
-
-
-  document
-    .getElementById("signupForm")
-    .style.display = "none";
-
-
-  document
-    .getElementById("loginTab")
-    .classList.add("active");
-
-
-  document
-    .getElementById("signupTab")
-    .classList.remove("active");
-
-
-  clearMessages();
-
-}
-
-
-
-function showSignup() {
-
-  document
-    .getElementById("loginForm")
-    .style.display = "none";
-
-
-  document
-    .getElementById("signupForm")
-    .style.display = "block";
-
-
-  document
-    .getElementById("loginTab")
-    .classList.remove("active");
-
-
-  document
-    .getElementById("signupTab")
-    .classList.add("active");
-
-
-  clearMessages();
-
-}
-
-
-
-/* ======================================
-   LOGIN
-====================================== */
-
-function login() {
-
-
-  const username =
-    document
-      .getElementById("loginUsername")
-      .value
-      .trim();
-
-
-  const password =
-    document
-      .getElementById("loginPassword")
-      .value;
-
-
-  if (!username || !password) {
-
-    showError(
-      "نام کاربری و رمز عبور را وارد کن."
-    );
-
-    return;
-
-  }
-
-
-  if (!dataLoaded) {
-
-    showError(
-      "products.json هنوز بارگذاری نشده."
-    );
-
-    return;
-
-  }
-
-
-  const user =
-    database.users.find(
-      u =>
-        u.username === username &&
-        u.password === password
-    );
-
-
-  if (!user) {
-
-    showError(
-      "نام کاربری یا رمز عبور اشتباه است."
-    );
-
-    return;
-
-  }
-
-
-  localStorage.setItem(
-    "ahouranemone_logged_user",
-    JSON.stringify(user)
-  );
-
-
-  window.location.href =
-    "shop.html";
-
-}
-
-
-
-/* ======================================
-   SIGNUP
-====================================== */
-
-function signup() {
-
-
-  const name =
-    document
-      .getElementById("signupName")
-      .value
-      .trim();
-
-
-  const username =
-    document
-      .getElementById("signupUsername")
-      .value
-      .trim();
-
-
-  const password =
-    document
-      .getElementById("signupPassword")
-      .value;
-
-
-  if (!name || !username || !password) {
-
-    showError(
-      "همه قسمت‌ها را پر کن."
-    );
-
-    return;
-
-  }
-
-
-  const exists =
-    database.users.some(
-      u =>
-        u.username === username
-    );
-
-
-  if (exists) {
-
-    showError(
-      "این نام کاربری قبلاً استفاده شده."
-    );
-
-    return;
-
-  }
-
-
-  const newUser = {
-
-    id:
-      Date.now(),
-
-    username:
-      username,
-
-    password:
-      password,
-
-    name:
-      name
-
-  };
-
-
-  database.users.push(
-    newUser
-  );
-
-
-  localStorage.setItem(
-    "ahouranemone_logged_user",
-    JSON.stringify(newUser)
-  );
-
-
-  document
-    .getElementById("exportBox")
-    .style.display = "block";
-
+</body>
+</html>
 
   document
     .getElementById("exportJSON")
