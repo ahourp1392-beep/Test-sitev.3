@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>ورود | نمونه کار</title>
+
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+
+      min-height: 100vh;
+
+      background:
+        linear-gradient(
+          135deg,
+          #f8fafc,
+          #eef2ff
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #111827;
+    }
+
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+
+      padding: 20px;
+    }
+
+
+    .card {
+      background: white;
+
+      border-radius: 24px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 15px 45px
+        rgba(0,0,0,.08);
+    }
+
+
+    .logo {
+      width: 70px;
+      height: 70px;
+
+      border-radius: 20px;
+
+      background: #111827;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      font-size: 30px;
+
+      margin: 0 auto 18px;
+    }
+
+
+    h1 {
+      text-align: center;
+
+      font-size: 25px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .subtitle {
+      text-align: center;
+
+      color: #6b7280;
+
+      font-size: 14px;
+
+      margin-bottom: 25px;
+    }
+
+
+    .tabs {
+      display: flex;
+
+      background: #f3f4f6;
+
+      padding: 5px;
+
+      border-radius: 13px;
+
+      margin-bottom: 22px;
+    }
+
+
+    .tab {
+      width: 50%;
+
+      border: 0;
+
+      background: transparent;
+
+      padding: 11px;
+
+      border-radius: 10px;
+
+      font-family: inherit;
+
+      cursor: pointer;
+
+      font-weight: bold;
+
+      color: #6b7280;
+    }
+
+
+    .tab.active {
+      background: white;
+
+      color: #111827;
+
+      box-shadow:
+        0 2px 8px
+        rgba(0,0,0,.06);
+    }
+
+
+    label {
+      display: block;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+      margin-bottom: 7px;
+    }
+
+
+    input {
+      width: 100%;
+
+      padding: 14px;
+
+      border: 1px solid #d1d5db;
+
+      border-radius: 12px;
+
+      outline: none;
+
+      font-family: inherit;
+
+      margin-bottom: 16px;
+    }
+
+
+    input:focus {
+      border-color: #2563eb;
+    }
+
+
+    .main-btn {
+      width: 100%;
+
+      border: 0;
+
+      border-radius: 12px;
+
+      padding: 14px;
+
+      background: #111827;
+
+      color: white;
+
+      font-family: inherit;
+
+      font-weight: bold;
+
+      cursor: pointer;
+    }
+
+
+    .main-btn:hover {
+      background: #2563eb;
+    }
+
+
+    .message {
+      display: none;
+
+      padding: 12px;
+
+      border-radius: 11px;
+
+      margin-bottom: 15px;
+
+      font-size: 13px;
+
+      line-height: 1.7;
+    }
+
+
+    .error {
+      background: #fee2e2;
+
+      color: #991b1b;
+    }
+
+
+    .success {
+      background: #dcfce7;
+
+      color: #166534;
+    }
+
+
+    .shop-link {
+      display: block;
+
+      text-align: center;
+
+      margin-top: 18px;
+
+      color: #2563eb;
+
+      text-decoration: none;
+
+      font-size: 14px;
+    }
+
+
+    .loading {
+      text-align: center;
+
+      color: #6b7280;
+
+      font-size: 13px;
+
+      margin-bottom: 15px;
+    }
+
+
+    .export-box {
+      display: none;
+
+      margin-top: 20px;
+
+      padding-top: 20px;
+
+      border-top: 1px solid #e5e7eb;
+    }
+
+
+    .export-box textarea {
+      width: 100%;
+
+      min-height: 150px;
+
+      direction: ltr;
+
+      text-align: left;
+
+      font-family: monospace;
+
+      padding: 10px;
+
+      border-radius: 10px;
+
+      border: 1px solid #d1d5db;
+    }
+
+
+    .copy-btn {
+      width: 100%;
+
+      margin-top: 8px;
+
+      padding: 11px;
+
+      border: 0;
+
+      border-radius: 10px;
+
+      background: #16a34a;
+
+      color: white;
+
+      font-family: inherit;
+
+      font-weight: bold;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+  <div class="card">
+
+
+    <div class="logo">
+      🛍️
+    </div>
+
+
+    <h1>
+      نمونه کار
+    </h1>
+
+
+    <div class="subtitle">
+      فروشگاه آنلاین
+    </div>
+
+
+    <div
+      class="loading"
+      id="loading"
+    >
+      در حال دریافت اطلاعات...
+    </div>
+
+
+    <div class="tabs">
+
+      <button
+        class="tab active"
+        id="loginTab"
+        onclick="showLogin()"
+      >
+        ورود
+      </button>
+
+      <button
+        class="tab"
+        id="signupTab"
+        onclick="showSignup()"
+      >
+        ثبت‌نام
+      </button>
+
+    </div>
+
+
+    <div
+      class="message error"
+      id="errorMessage"
+    ></div>
+
+
+    <div
+      class="message success"
+      id="successMessage"
+    ></div>
+
+
+    <!-- LOGIN -->
+
+    <div id="loginForm">
+
+      <label>
+        نام کاربری
+      </label>
+
+      <input
+        id="loginUsername"
+        type="text"
+        placeholder="نام کاربری"
+      >
+
+
+      <label>
+        رمز عبور
+      </label>
+
+      <input
+        id="loginPassword"
+        type="password"
+        placeholder="رمز عبور"
+      >
+
+
+      <button
+        class="main-btn"
+        onclick="login()"
+      >
+        ورود به فروشگاه
+      </button>
+
+    </div>
+
+
+    <!-- SIGNUP -->
+
+    <div
+      id="signupForm"
+      style="display:none;"
+    >
+
+      <label>
+        نام
+      </label>
+
+      <input
+        id="signupName"
+        type="text"
+        placeholder="نام شما"
+      >
+
+
+      <label>
+        نام کاربری
+      </label>
+
+      <input
+        id="signupUsername"
+        type="text"
+        placeholder="نام کاربری"
+      >
+
+
+      <label>
+        رمز عبور
+      </label>
+
+      <input
+        id="signupPassword"
+        type="password"
+        placeholder="رمز عبور"
+      >
+
+
+      <button
+        class="main-btn"
+        onclick="signup()"
+      >
+        ساخت حساب
+      </button>
+
+
+      <div
+        class="export-box"
+        id="exportBox"
+      >
+
+        <p
+          style="
+            font-size:13px;
+            line-height:1.8;
+            margin-bottom:8px;
+          "
+        >
+          حساب ساخته شد. برای اینکه این کاربر
+          در فایل عمومی سایت هم ثبت شود،
+          JSON زیر را در products.json قرار بده.
+        </p>
+
+        <textarea
+          id="exportJSON"
+          readonly
+        ></textarea>
+
+        <button
+          class="copy-btn"
+          onclick="copyJSON()"
+        >
+          📋 کپی JSON
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <a
+      href="shop.html"
+      class="shop-link"
+    >
+      مشاهده فروشگاه ←
+    </a>
+
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+
+let database = {
+  users: [],
+  products: []
+};
+
+
+let dataLoaded = false;
+
+
+
+/* ======================================
+   LOAD PRODUCTS.JSON
+====================================== */
+
+async function loadDatabase() {
+
+  try {
+
+    const response =
+      await fetch(
+        "products.json?cache=" +
+        Date.now()
+      );
+
+
+    if (!response.ok) {
+      throw new Error();
+    }
+
+
+    database =
+      await response.json();
+
+
+    if (!Array.isArray(database.users)) {
+      database.users = [];
+    }
+
+
+    if (!Array.isArray(database.products)) {
+      database.products = [];
+    }
+
+
+    dataLoaded = true;
+
+
+    document
+      .getElementById("loading")
+      .textContent =
+      "اطلاعات فروشگاه آماده است.";
+
+
+  } catch (error) {
+
+    document
+      .getElementById("loading")
+      .textContent =
+      "خطا در دریافت products.json";
+
+  }
+
+}
+
+
+loadDatabase();
+
+
+
+/* ======================================
+   TABS
+====================================== */
+
+function showLogin() {
+
+  document
+    .getElementById("loginForm")
+    .style.display = "block";
+
+
+  document
+    .getElementById("signupForm")
+    .style.display = "none";
+
+
+  document
+    .getElementById("loginTab")
+    .classList.add("active");
+
+
+  document
+    .getElementById("signupTab")
+    .classList.remove("active");
+
+
+  clearMessages();
+
+}
+
+
+
+function showSignup() {
+
+  document
+    .getElementById("loginForm")
+    .style.display = "none";
+
+
+  document
+    .getElementById("signupForm")
+    .style.display = "block";
+
+
+  document
+    .getElementById("loginTab")
+    .classList.remove("active");
+
+
+  document
+    .getElementById("signupTab")
+    .classList.add("active");
+
+
+  clearMessages();
+
+}
+
+
+
+/* ======================================
+   LOGIN
+====================================== */
+
+function login() {
+
+
+  const username =
+    document
+      .getElementById("loginUsername")
+      .value
+      .trim();
+
+
+  const password =
+    document
+      .getElementById("loginPassword")
+      .value;
+
+
+  if (!username || !password) {
+
+    showError(
+      "نام کاربری و رمز عبور را وارد کن."
+    );
+
+    return;
+
+  }
+
+
+  if (!dataLoaded) {
+
+    showError(
+      "products.json هنوز بارگذاری نشده."
+    );
+
+    return;
+
+  }
+
+
+  const user =
+    database.users.find(
+      u =>
+        u.username === username &&
+        u.password === password
+    );
+
+
+  if (!user) {
+
+    showError(
+      "نام کاربری یا رمز عبور اشتباه است."
+    );
+
+    return;
+
+  }
+
+
+  localStorage.setItem(
+    "ahouranemone_logged_user",
+    JSON.stringify(user)
+  );
+
+
+  window.location.href =
+    "shop.html";
+
+}
+
+
+
+/* ======================================
+   SIGNUP
+====================================== */
+
+function signup() {
+
+
+  const name =
+    document
+      .getElementById("signupName")
+      .value
+      .trim();
+
+
+  const username =
+    document
+      .getElementById("signupUsername")
+      .value
+      .trim();
+
+
+  const password =
+    document
+      .getElementById("signupPassword")
+      .value;
+
+
+  if (!name || !username || !password) {
+
+    showError(
+      "همه قسمت‌ها را پر کن."
+    );
+
+    return;
+
+  }
+
+
+  const exists =
+    database.users.some(
+      u =>
+        u.username === username
+    );
+
+
+  if (exists) {
+
+    showError(
+      "این نام کاربری قبلاً استفاده شده."
+    );
+
+    return;
+
+  }
+
+
+  const newUser = {
+
+    id:
+      Date.now(),
+
+    username:
+      username,
+
+    password:
+      password,
+
+    name:
+      name
+
+  };
+
+
+  database.users.push(
+    newUser
+  );
+
+
+  localStorage.setItem(
+    "ahouranemone_logged_user",
+    JSON.stringify(newUser)
+  );
+
+
+  document
+    .getElementById("exportBox")
+    .style.display = "block";
+
+
+  document
+    .getElementById("exportJSON")
+    .value =
+    JSON.stringify(
+      database,
+      null,
+      2
+    );
+
+
+  showSuccess(
+    "حساب ساخته شد. برای ذخیره عمومی، JSON را در products.json قرار بده."
+  );
+
+}
+
+
+
+/* ======================================
+   MESSAGES
+====================================== */
+
+function showError(text) {
+
+  const box =
+    document.getElementById(
+      "errorMessage"
+    );
+
+
+  box.textContent =
+    text;
+
+
+  box.style.display =
+    "block";
+
+
+  document
+    .getElementById("successMessage")
+    .style.display =
+    "none";
+
+}
+
+
+
+function showSuccess(text) {
+
+  const box =
+    document.getElementById(
+      "successMessage"
+    );
+
+
+  box.textContent =
+    text;
+
+
+  box.style.display =
+    "block";
+
+
+  document
+    .getElementById("errorMessage")
+    .style.display =
+    "none";
+
+}
+
+
+
+function clearMessages() {
+
+  document
+    .getElementById("errorMessage")
+    .style.display =
+    "none";
+
+
+  document
+    .getElementById("successMessage")
+    .style.display =
+    "none";
+
+}
+
+
+
+/* ======================================
+   COPY
+====================================== */
+
+async function copyJSON() {
+
+  const text =
+    document
+      .getElementById("exportJSON")
+      .value;
+
+
+  try {
+
+    await navigator.clipboard.writeText(
+      text
+    );
+
+    alert(
+      "JSON کپی شد ✅"
+    );
+
+  } catch {
+
+    const box =
+      document.getElementById(
+        "exportJSON"
+      );
+
+    box.select();
+
+    document.execCommand(
+      "copy"
+    );
+
+    alert(
+      "JSON کپی شد ✅"
+    );
+
+  }
+
+}
+
+</script>
+
+
+</body>
+
+</html>
